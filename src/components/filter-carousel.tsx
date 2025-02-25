@@ -16,7 +16,7 @@ import { Skeleton } from './ui/skeleton';
 interface FilterCarouselProps {
     value?: string | null;
     isLoading?: boolean;
-    onSelect: (value: string | null) => void;
+    onSelectAction: (value: string | null) => void;
     data: {
         value: string;
         lable: string;
@@ -26,7 +26,7 @@ interface FilterCarouselProps {
 export const FilterCarausel = ({
     value,
     isLoading,
-    onSelect,
+    onSelectAction,
     data,
 }: FilterCarouselProps) => {
     const [api, setApi] = useState<CarouselApi>();
@@ -79,7 +79,7 @@ export const FilterCarausel = ({
                         <>
                             <CarouselItem
                                 className="pl-3 basis-auto"
-                                onClick={() => onSelect(null)}
+                                onClick={() => onSelectAction(null)}
                             >
                                 <Badge
                                     variant={!value ? 'default' : 'secondary'}
@@ -92,7 +92,7 @@ export const FilterCarausel = ({
                                 <CarouselItem
                                     key={item.value}
                                     className="pl-3 basis-auto"
-                                    onClick={() => onSelect(item.value)}
+                                    onClick={() => onSelectAction(item.value)}
                                 >
                                     <Badge
                                         variant={

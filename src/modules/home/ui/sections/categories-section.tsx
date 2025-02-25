@@ -21,7 +21,7 @@ export const CategoriesSection = ({ categoryId }: CategoriesSectionProps) => {
 };
 
 const CategorySkeleton = () => {
-  return <FilterCarausel isLoading data={[]} onSelect={() => {}} />
+  return <FilterCarausel isLoading data={[]} onSelectAction={() => {}} />
 }
 
 const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
@@ -33,7 +33,7 @@ const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
         lable: name,
     }));
 
-    const onSelect = (value: string | null) => {
+    const onSelectAction = (value: string | null) => {
       const url = new URL(window.location.href);
 
       if (value) {
@@ -44,5 +44,5 @@ const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
 
       router.push(url.toString())
     }
-    return <FilterCarausel onSelect={onSelect} value={categoryId} data={data} />;
+    return <FilterCarausel onSelectAction={onSelectAction} value={categoryId} data={data} />;
 };
