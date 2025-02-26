@@ -7,6 +7,7 @@
     "dev": "next dev",
     "dev:webhook": "ngrok http --url=maximum-nearly-cat.ngrok-free.app 3000",
     "studio": "bunx drizzle-kit studio",
+    "db:push": "bunx drizzle-kit push",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
